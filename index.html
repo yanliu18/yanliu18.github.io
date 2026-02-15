@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yan Liu — Formal Methods Researcher</title>
+  <style>
+    :root {
+      --fg: #1a1a2e;
+      --fg-muted: #555;
+      --accent: #2d5a7b;
+      --accent-light: #e8f0f6;
+      --bg: #fafafa;
+      --card-bg: #fff;
+      --border: #ddd;
+      --radius: 6px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* ---- Layout ---- */
+    .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding: 48px 0 32px;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+    }
+    header p.tagline {
+      margin-top: 6px;
+      font-size: 1.05rem;
+      color: var(--fg-muted);
+      font-style: italic;
+    }
+    nav {
+      margin-top: 16px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-variant: small-caps;
+      letter-spacing: 0.06em;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    /* ---- Sections ---- */
+    section { padding: 36px 0; }
+    section + section { border-top: 1px solid var(--border); }
+    section h2 {
+      font-size: 1.25rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-variant: small-caps;
+      letter-spacing: 0.04em;
+    }
+    section p + p { margin-top: 12px; }
+
+    /* ---- Publications ---- */
+    .pub-list { list-style: none; }
+    .pub-list li {
+      margin-bottom: 18px;
+      padding-left: 16px;
+      border-left: 3px solid var(--accent-light);
+    }
+    .pub-list .title {
+      font-weight: 600;
+    }
+    .pub-list .venue {
+      font-style: italic;
+      color: var(--fg-muted);
+    }
+    .pub-list .links a {
+      font-size: 0.88rem;
+      color: var(--accent);
+      margin-right: 10px;
+      text-decoration: none;
+    }
+    .pub-list .links a:hover { text-decoration: underline; }
+
+    /* ---- Teaching ---- */
+    .teaching-list { list-style: none; }
+    .teaching-list li {
+      margin-bottom: 10px;
+      padding-left: 16px;
+      border-left: 3px solid var(--accent-light);
+    }
+    .teaching-list .role { color: var(--fg-muted); font-size: 0.93rem; }
+
+    /* ---- Contact ---- */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+    }
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .contact-links a:hover { text-decoration: underline; }
+
+    /* ---- Footer ---- */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--fg-muted);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 600px) {
+      header { padding: 32px 0 20px; }
+      header h1 { font-size: 1.6rem; }
+      section { padding: 28px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>Yan Liu</h1>
+    <p class="tagline">Formal Methods &middot; Mechanised Mathematics &middot; Theorem Proving</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching &amp; Talks</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ====== About ====== -->
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      <!-- TODO: Replace with your actual bio -->
+      I am a researcher in formal methods, with a focus on mechanised proofs
+      and interactive theorem proving. My work bridges the gap between
+      mathematical reasoning and machine-checked verification, aiming to
+      make formal verification more accessible and scalable.
+    </p>
+    <p>
+      My research interests include interactive theorem provers (Isabelle, Coq, Lean),
+      program verification, certified compilers, and the formalisation of mathematics.
+    </p>
+  </section>
+
+  <!-- ====== Publications ====== -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul class="pub-list">
+      <!-- TODO: Replace with your actual publications -->
+      <li>
+        <span class="title">Title of Your Paper</span><br>
+        Author A, <strong>Yan Liu</strong>, Author C<br>
+        <span class="venue">Conference or Journal Name, 2025</span><br>
+        <span class="links">
+          <a href="#">[pdf]</a>
+          <a href="#">[arXiv]</a>
+          <a href="#">[code]</a>
+        </span>
+      </li>
+      <li>
+        <span class="title">Another Paper Title</span><br>
+        <strong>Yan Liu</strong>, Author B<br>
+        <span class="venue">Workshop or Symposium, 2024</span><br>
+        <span class="links">
+          <a href="#">[pdf]</a>
+          <a href="#">[slides]</a>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ====== Teaching & Talks ====== -->
+  <section id="teaching">
+    <h2>Teaching &amp; Talks</h2>
+    <ul class="teaching-list">
+      <!-- TODO: Replace with your actual teaching / talks -->
+      <li>
+        <strong>Course Title</strong> &mdash; University Name, Semester Year<br>
+        <span class="role">Teaching Assistant</span>
+      </li>
+      <li>
+        <strong>Talk Title</strong> &mdash; Event Name, Year<br>
+        <span class="role">Invited Talk</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ====== Contact ====== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <a href="mailto:dev.emmaliu@gmail.com">Email</a>
+      <a href="https://github.com/yanliu18">GitHub</a>
+      <!-- TODO: Add your actual links below -->
+      <a href="https://scholar.google.com/">Google Scholar</a>
+      <a href="https://emmayanliu.bitbucket.io">Bitbucket Page</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Yan Liu. Hosted on <a href="https://pages.github.com/" style="color:var(--accent)">GitHub Pages</a>.
+  </footer>
+
+</div>
+
+</body>
+</html>
