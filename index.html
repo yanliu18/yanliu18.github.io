@@ -69,6 +69,16 @@
     }
     section p + p { margin-top: 12px; }
 
+    /* ---- Research projects ---- */
+    .project-list { list-style: none; margin-top: 8px; }
+    .project-list li {
+      margin-bottom: 14px;
+      padding-left: 16px;
+      border-left: 3px solid var(--accent-light);
+    }
+    .project-list .proj-name { font-weight: 600; }
+    .project-list .proj-desc { color: var(--fg-muted); font-size: 0.95rem; }
+
     /* ---- Publications ---- */
     .pub-list { list-style: none; }
     .pub-list li {
@@ -83,6 +93,18 @@
       font-style: italic;
       color: var(--fg-muted);
     }
+    .pub-list .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 3px;
+      padding: 1px 6px;
+      margin-left: 6px;
+      font-style: normal;
+      font-variant: normal;
+      vertical-align: middle;
+    }
     .pub-list .links a {
       font-size: 0.88rem;
       color: var(--accent);
@@ -90,6 +112,16 @@
       text-decoration: none;
     }
     .pub-list .links a:hover { text-decoration: underline; }
+    .pub-section-label {
+      font-size: 0.88rem;
+      font-variant: small-caps;
+      letter-spacing: 0.05em;
+      color: var(--fg-muted);
+      margin: 20px 0 10px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+    }
+    .pub-section-label:first-child { margin-top: 0; }
 
     /* ---- Teaching ---- */
     .teaching-list { list-style: none; }
@@ -136,11 +168,12 @@
 
   <header>
     <h1>Yan Liu</h1>
-    <p class="tagline">Formal Methods &middot; Mechanised Mathematics &middot; Theorem Proving</p>
+    <p class="tagline">Formal Methods &middot; Programming Languages &middot; Secure Systems</p>
     <nav>
       <a href="#about">About</a>
+      <a href="#research">Research</a>
       <a href="#publications">Publications</a>
-      <a href="#teaching">Teaching &amp; Talks</a>
+      <a href="#teaching">Teaching &amp; Service</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -149,57 +182,213 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      <!-- TODO: Replace with your actual bio -->
-      I am a researcher in formal methods, with a focus on mechanised proofs
-      and interactive theorem proving. My work bridges the gap between
-      mathematical reasoning and machine-checked verification, aiming to
-      make formal verification more accessible and scalable.
+      I am a Research Fellow at the <strong>Australian National University (ANU)</strong> School of Computing (2025&ndash;),
+      working on formal verification for secure embedded systems. My research sits at the intersection of
+      <strong>formal methods</strong>, <strong>programming languages</strong>, and <strong>systems security</strong>,
+      with a long-term goal of making formal verification a natural part of the software development lifecycle &mdash;
+      specifically, automating the formalisation process to close the gap between verification&rsquo;s clear value and
+      its steep adoption barrier.
     </p>
     <p>
-      My research interests include interactive theorem provers (Isabelle, Coq, Lean),
-      program verification, certified compilers, and the formalisation of mathematics.
+      My background spans academia and industry across four countries. Before joining ANU I was a Staff Engineer at
+      <strong>Pi Squared Inc.</strong> (2024&ndash;2025) working on zero-knowledge circuits and cross-chain protocols,
+      and Rust Security Lead at <strong>Runtime Verification</strong> (2022&ndash;2024) developing Rust MIR semantics
+      in the K Framework and leading smart contract audits. Earlier I was a Senior Engineer at
+      <strong>AntGroup</strong> (2019&ndash;2022), a Sessional Lecturer at <strong>Monash University</strong>
+      (2018&ndash;2019), and a Research Fellow at <strong>NUS / ADSC&ndash;UIUC</strong> (2013&ndash;2017).
+    </p>
+    <p>
+      I hold a <strong>PhD in Computer Science</strong> from the National University of Singapore (2014),
+      where I was supervised by Prof. Jin Song Dong. My thesis applied model checking to pervasive computing systems.
     </p>
   </section>
 
-  <!-- ====== Publications ====== -->
-  <section id="publications">
-    <h2>Publications</h2>
-    <ul class="pub-list">
-      <!-- TODO: Replace with your actual publications -->
+  <!-- ====== Research ====== -->
+  <section id="research">
+    <h2>Research</h2>
+    <p>
+      My current research programme centres on <em>secure-by-construction embedded systems</em> and
+      <em>AI-assisted verified software development</em>, unified by a choreography-style language called
+      <strong>ChorFi</strong> built on the seL4 microkernel.
+    </p>
+    <ul class="project-list">
       <li>
-        <span class="title">Title of Your Paper</span><br>
-        Author A, <strong>Yan Liu</strong>, Author C<br>
-        <span class="venue">Conference or Journal Name, 2025</span><br>
-        <span class="links">
-          <a href="#">[pdf]</a>
-          <a href="#">[arXiv]</a>
-          <a href="#">[code]</a>
+        <span class="proj-name">Fiducia</span> &mdash; Secure-by-Construction Embedded Systems<br>
+        <span class="proj-desc">
+          A DSL and toolchain for building information-flow-secure embedded systems on seL4. Developers express
+          inter-device communication and intra-device computation in a single ChorFi choreography specification;
+          safety, liveness, and non-interference are verified automatically at compile time via model checking and
+          a sound security type system. Motto: <em>if it compiles, security is guaranteed.</em>
+          Joint work with Prof. Alex Potanin, A/Prof. Alwen Tiu (ANU), and collaborators at UNSW and NUS.
         </span>
       </li>
       <li>
-        <span class="title">Another Paper Title</span><br>
-        <strong>Yan Liu</strong>, Author B<br>
-        <span class="venue">Workshop or Symposium, 2024</span><br>
-        <span class="links">
-          <a href="#">[pdf]</a>
-          <a href="#">[slides]</a>
+        <span class="proj-name">Tecton</span> &mdash; AI-Assisted Verified Development<br>
+        <span class="proj-desc">
+          A closed-loop pipeline where AI and humans co-work across the full verified-systems lifecycle:
+          choreographic specification, LLM-based code synthesis, automated proof discharge (Lean 4, Verus),
+          and proof-mapping visualisation. Tecton scales to complex heterogeneous systems through automatic
+          verification-method dispatch, compositional proof strategies, and multi-agent verification orchestration.
+        </span>
+      </li>
+      <li>
+        <span class="proj-name">KMIR</span> &mdash; Rust MIR Semantics in the K Framework<br>
+        <span class="proj-desc">
+          A formal operational semantics for Rust&rsquo;s Mid-level Intermediate Representation (MIR) in the K
+          Framework, enabling formal analysis and model-based testing of Rust programs.
+          Funded by a <strong>Web3 Foundation grant</strong>; publicly available on GitHub.
         </span>
       </li>
     </ul>
   </section>
 
-  <!-- ====== Teaching & Talks ====== -->
-  <section id="teaching">
-    <h2>Teaching &amp; Talks</h2>
-    <ul class="teaching-list">
-      <!-- TODO: Replace with your actual teaching / talks -->
+  <!-- ====== Publications ====== -->
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <p class="pub-section-label">Journal Articles</p>
+    <ul class="pub-list">
       <li>
-        <strong>Course Title</strong> &mdash; University Name, Semester Year<br>
-        <span class="role">Teaching Assistant</span>
+        <span class="title">Scrutinizing Implementations of Smart Home Integrations</span><br>
+        K. Mahadewa, K. Wang, G. Bai, L. Shi, <strong>Y. Liu</strong>, J. S. Dong, Z. Liang<br>
+        <span class="venue">IEEE Transactions on Software Engineering (TSE), vol. 47, no. 12, pp. 2667&ndash;2683, 2019</span><br>
+        <span class="links">
+          <a href="https://doi.org/10.1109/TSE.2019.2946231">[doi]</a>
+        </span>
       </li>
       <li>
-        <strong>Talk Title</strong> &mdash; Event Name, Year<br>
-        <span class="role">Invited Talk</span>
+        <span class="title">Towards Formal Modelling and Verification of Pervasive Computing Systems</span><br>
+        <strong>Y. Liu</strong>, X. Zhang, Y. Liu, J. Sun, J. S. Dong, J. Biswas, M. Mokhtari<br>
+        <span class="venue">Transactions on Computational Collective Intelligence (LNCS vol. 8780), pp. 62&ndash;91, 2014</span><br>
+        <span class="links">
+          <a href="https://doi.org/10.1007/978-3-662-44871-7_3">[doi]</a>
+        </span>
+      </li>
+      <li>
+        <span class="title">Modeling and Verifying Hierarchical Real-time Systems using Stateful Timed CSP</span><br>
+        J. Sun, Y. Liu, J. S. Dong, <strong>Y. Liu</strong>, L. Shi, &Eacute;. Andr&eacute;<br>
+        <span class="venue">ACM Transactions on Software Engineering and Methodology (TOSEM), vol. 22, no. 1, 2013</span><br>
+        <span class="links">
+          <a href="https://doi.org/10.1145/2430536.2430537">[doi]</a>
+        </span>
+      </li>
+    </ul>
+
+    <p class="pub-section-label">Conference Papers</p>
+    <ul class="pub-list">
+      <li>
+        <span class="title">Smart Maintenance via Dynamic Fault Tree Analysis: A Case Study on Singapore MRT System</span><br>
+        <strong>Y. Liu</strong>, Y. Wu, Z. Kalbarczyk<br>
+        <span class="venue">47th IEEE/IFIP International Conference on Dependable Systems and Networks (DSN), 2017, pp. 511&ndash;518</span><br>
+        <span class="links">
+          <a href="https://doi.org/10.1109/DSN.2017.50">[doi]</a>
+        </span>
+      </li>
+      <li>
+        <span class="title">MDP-based Reliability Analysis of an Ambient Assisted Living System</span><br>
+        <strong>Y. Liu</strong>, L. Gui, Y. Liu<br>
+        <span class="venue">FM 2014: Formal Methods (LNCS vol. 8442), pp. 688&ndash;702</span><br>
+        <span class="links">
+          <a href="https://doi.org/10.1007/978-3-319-06410-9_46">[doi]</a>
+        </span>
+      </li>
+      <li>
+        <span class="title">Formal Analysis of Pervasive Computing Systems</span><br>
+        <strong>Y. Liu</strong>, X. Zhang, Y. Liu, J. Sun, J. S. Dong, J. Biswas, M. Mokhtari<br>
+        <span class="venue">17th IEEE International Conference on Engineering of Complex Computer Systems (ICECCS), 2012, pp. 169&ndash;178
+          <span class="badge">Best Paper Award</span>
+        </span><br>
+        <span class="links">
+          <a href="https://doi.org/10.1109/ICECCS.2012.19">[doi]</a>
+        </span>
+      </li>
+      <li>
+        <span class="title">Improved BDD-based Discrete Analysis of Timed Systems</span><br>
+        T. K. Nguyen, J. Sun, Y. Liu, J. S. Dong, <strong>Y. Liu</strong><br>
+        <span class="venue">FM 2012: Formal Methods (LNCS vol. 7436), pp. 326&ndash;340</span><br>
+        <span class="links">
+          <a href="https://doi.org/10.1007/978-3-642-32759-9_28">[doi]</a>
+        </span>
+      </li>
+      <li>
+        <span class="title">Formal Modelling and Verification of Pervasive Computing Systems</span><br>
+        <strong>Y. Liu</strong><br>
+        <span class="venue">1st French&ndash;Singaporean Workshop on Formal Methods and Applications (FSFMA), OASIcs vol. 31, pp. 61&ndash;67, 2013</span><br>
+        <span class="links">
+          <a href="https://doi.org/10.4230/OASIcs.FSFMA.2013.61">[doi]</a>
+        </span>
+      </li>
+      <li>
+        <span class="title">ACARP: Auto Correct Activity Recognition Rules Using Process Analysis Toolkit (PAT)</span><br>
+        V. Y. Lee, <strong>Y. Liu</strong>, X. Zhang, C. Phua, K. Sim, J. Zhu, J. Biswas, J. S. Dong, M. Mokhtari<br>
+        <span class="venue">10th International Conference on Smart Homes and Health Telematics (ICOST), LNCS vol. 7251, pp. 182&ndash;189, 2012</span><br>
+        <span class="links">
+          <a href="https://doi.org/10.1007/978-3-642-30779-9_23">[doi]</a>
+        </span>
+      </li>
+      <li>
+        <span class="title">Modeling and Verification of Transmission Protocols: A Case Study on CSMA/CD Protocol</span><br>
+        L. Shi, <strong>Y. Liu</strong><br>
+        <span class="venue">4th IEEE International Conference on Secure Software Integration and Reliability Improvement Companion (SSIRI-C), 2010, pp. 143&ndash;149</span><br>
+        <span class="links">
+          <a href="https://doi.org/10.1109/SSIRI-C.2010.33">[doi]</a>
+        </span>
+      </li>
+      <li>
+        <span class="title">A Logic-Based Approach to Web Services Composition and Verification</span><br>
+        H. Wang, C. Wang, <strong>Y. Liu</strong><br>
+        <span class="venue">2009 World Conference on Services (SERVICES-II), Bangalore, India, pp. 103&ndash;110</span><br>
+        <span class="links">
+          <a href="https://doi.org/10.1109/SERVICES-2.2009.12">[doi]</a>
+        </span>
+      </li>
+    </ul>
+
+    <p class="pub-section-label">Audit Reports &amp; Technical Standards</p>
+    <ul class="pub-list">
+      <li>
+        <span class="title">HydraDX Omnipool AMM — Security Audit</span><br>
+        <strong>Y. Liu</strong> et al. (Runtime Verification)<br>
+        <span class="venue">Publicly available audit report, Runtime Verification, 2023</span><br>
+        <span class="links">
+          <a href="https://github.com/runtimeverification/publications">[report]</a>
+        </span>
+      </li>
+      <li>
+        <span class="title">IEEE Standard on TEE-based Confidential Computing</span><br>
+        Technical contributor (AntGroup)<br>
+        <span class="venue">IEEE Standards Association, 2020&ndash;2022</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ====== Teaching & Service ====== -->
+  <section id="teaching">
+    <h2>Teaching &amp; Service</h2>
+
+    <p class="pub-section-label">Courses Taught</p>
+    <ul class="teaching-list">
+      <li>
+        <strong>FIT5171 Advanced Software Testing</strong> &mdash; Monash University, 2018&ndash;2019<br>
+        <span class="role">Sessional Lecturer (postgraduate) &mdash; formal testing, model-based testing, verification-based quality assurance</span>
+      </li>
+      <li>
+        <strong>FIT3013 Formal Methods</strong> &mdash; Monash University, 2018&ndash;2019<br>
+        <span class="role">Sessional Lecturer (undergraduate) &mdash; formal specification, model checking, theorem proving (PAT, Alloy)</span>
+      </li>
+      <li>
+        <strong>FIT2102 Programming Paradigms</strong> &mdash; Monash University, 2018&ndash;2019<br>
+        <span class="role">Sessional Lecturer (undergraduate) &mdash; functional programming in Haskell, type systems, higher-order functions</span>
+      </li>
+    </ul>
+
+    <p class="pub-section-label">Conference Organisation</p>
+    <ul class="teaching-list">
+      <li>
+        <strong>Local Chair / Co-chair</strong> &mdash; FSFMA 2013, FM 2014, PRDC 2014, ICECCS 2015
+      </li>
+      <li>
+        <strong>Programme Committee</strong> &mdash; WoRIE 2014, WoRIE 2015
       </li>
     </ul>
   </section>
@@ -210,9 +399,7 @@
     <div class="contact-links">
       <a href="mailto:dev.emmaliu@gmail.com">Email</a>
       <a href="https://github.com/yanliu18">GitHub</a>
-      <!-- TODO: Add your actual links below -->
-      <a href="https://scholar.google.com/">Google Scholar</a>
-      <a href="https://emmayanliu.bitbucket.io">Bitbucket Page</a>
+      <a href="https://www.linkedin.com/in/yanliuemma/">LinkedIn</a>
     </div>
   </section>
 
