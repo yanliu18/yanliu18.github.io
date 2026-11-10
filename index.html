@@ -259,8 +259,8 @@
           A language and compiler for applications on the formally verified <a href="https://sel4.systems/" style="color:var(--accent)">seL4</a> microkernel.
           Each protection domain is a CSP-style process orchestrating channel communication and computation in C or Pancake;
           a two-level information-flow type system keeps sensitive data from leaking, and every well-formed system is
-          deadlock-free and deterministic. Every build is also a verification run: the compiler derives a UPPAAL model of
-          the whole system from the program, with the C/Pancake code&rsquo;s contracts (proved by Frama-C or Viper) as event
+          deadlock-free and deterministic. Every build is also a verification run: the compiler auto-formalises a system model
+          from the Fiducia programs, with the C/Pancake code&rsquo;s contracts (proved by Frama-C or Viper) as event
           specifications, so the model never drifts from the code that ships. The core language&rsquo;s semantics are mechanised in Lean&nbsp;4.
           Joint work with <a href="https://comp.anu.edu.au/people/alex-potanin/" style="color:var(--accent)">Prof. Alex Potanin</a> (ANU) and collaborators at UNSW.
         </span>
