@@ -45,6 +45,28 @@
       color: var(--fg-muted);
       font-style: italic;
     }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .social {
+      display: flex;
+      gap: 18px;
+      padding-top: 10px;
+    }
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+    .social a:hover { text-decoration: underline; }
+    .social svg { width: 18px; height: 18px; fill: currentColor; }
     nav {
       margin-top: 16px;
       display: flex;
@@ -71,6 +93,8 @@
       letter-spacing: 0.04em;
     }
     section p + p { margin-top: 12px; }
+    #about a { color: var(--accent); text-decoration: none; }
+    #about a:hover { text-decoration: underline; }
 
     /* ---- Research projects ---- */
     .project-list { list-style: none; margin-top: 8px; }
@@ -135,19 +159,6 @@
     }
     .teaching-list .role { color: var(--fg-muted); font-size: 0.93rem; }
 
-    /* ---- Contact ---- */
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 28px;
-    }
-    .contact-links a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    .contact-links a:hover { text-decoration: underline; }
-
     /* ---- Footer ---- */
     footer {
       border-top: 1px solid var(--border);
@@ -170,14 +181,28 @@
 <div class="container">
 
   <header>
-    <h1>Yan Liu</h1>
-    <p class="tagline">Formal Methods &middot; Programming Languages &middot; Secure Systems</p>
+    <div class="header-top">
+      <div>
+        <h1>Yan Liu</h1>
+        <p class="tagline">Formal Methods &middot; Programming Languages &middot; Security Audits</p>
+      </div>
+      <div class="social">
+        <a href="mailto:dev.emmaliu@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>Email
+        </a>
+        <a href="https://github.com/yanliu18" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/yanliuemma/" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn
+        </a>
+      </div>
+    </div>
     <nav>
       <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#teaching">Teaching &amp; Service</a>
-      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -185,8 +210,8 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      I am a Research Fellow at the <strong>Australian National University (ANU)</strong> School of Computing (2025&ndash;),
-      working on formal verification for secure embedded systems. My research sits at the intersection of
+      I am a Research Fellow at the <a href="https://comp.anu.edu.au/"><strong>Australian National University (ANU)</strong> School of Computing</a> (2025&ndash;),
+      working with <a href="https://potanin.github.io/">Prof. Alex Potanin</a> on formal verification for secure embedded systems. My research sits at the intersection of
       <strong>formal methods</strong>, <strong>programming languages</strong>, and <strong>systems security</strong>,
       with a long-term goal of making formal verification a natural part of the software development lifecycle &mdash;
       specifically, automating the formalisation process to close the gap between verification&rsquo;s clear value and
@@ -194,15 +219,15 @@
     </p>
     <p>
       My background spans academia and industry across four countries. Before joining ANU I was a Staff Engineer at
-      <strong>Pi Squared Inc.</strong> (2024&ndash;2025) working on zero-knowledge circuits and cross-chain protocols,
-      and Rust Security Lead at <strong>Runtime Verification</strong> (2022&ndash;2024) developing Rust MIR semantics
-      in the K Framework and leading smart contract audits. Earlier I was a Senior Engineer at
-      <strong>AntGroup</strong> (2019&ndash;2022), a Sessional Lecturer at <strong>Monash University</strong>
-      (2018&ndash;2019), and a Research Fellow at <strong>NUS / ADSC&ndash;UIUC</strong> (2013&ndash;2017).
+      <a href="https://pi2.network/"><strong>Pi Squared Inc.</strong></a> (2024&ndash;2025) working on zero-knowledge circuits and cross-chain protocols,
+      and Rust Security Lead at <a href="https://runtimeverification.com/"><strong>Runtime Verification</strong></a> (2022&ndash;2024) developing Rust MIR semantics
+      in the <a href="https://kframework.org/">K Framework</a> and leading smart contract audits. Earlier I was a Senior Engineer at
+      <a href="https://www.antgroup.com/en"><strong>AntGroup</strong></a> (2019&ndash;2022), a Sessional Lecturer at <a href="https://www.monash.edu/"><strong>Monash University</strong></a>
+      (2018&ndash;2019), and a Research Fellow at <a href="https://www.nus.edu.sg/"><strong>NUS</strong></a> / <a href="https://adsc.illinois.edu/"><strong>ADSC&ndash;UIUC</strong></a> (2013&ndash;2017).
     </p>
     <p>
-      I hold a <strong>PhD in Computer Science</strong> from the National University of Singapore (2014),
-      where I was supervised by Prof. Jin Song Dong. My thesis applied model checking to pervasive computing systems.
+      I hold a <strong>PhD in Computer Science</strong> from the <a href="https://www.nus.edu.sg/">National University of Singapore</a> (2014),
+      where I was supervised by <a href="https://www.comp.nus.edu.sg/~dongjs/">Prof. Jin Song Dong</a>. My thesis applied model checking to pervasive computing systems.
     </p>
   </section>
 
@@ -216,13 +241,14 @@
     </p>
     <ul class="project-list">
       <li>
-        <span class="proj-name">Fiducia</span> &mdash; Secure-by-Construction Embedded Systems<br>
+        <span class="proj-name"><a href="https://fiducia-lang.github.io/" style="color:var(--fg);text-decoration:none">Fiducia</a></span> &mdash; Secure-by-Construction Embedded Systems<br>
         <span class="proj-desc">
           A DSL and toolchain for building information-flow-secure embedded systems on seL4. Developers express
           inter-device communication and intra-device computation in a single ChorFi choreography specification;
           safety, liveness, and non-interference are verified automatically at compile time via model checking and
           a sound security type system. Motto: <em>if it compiles, security is guaranteed.</em>
-          Joint work with <a href="https://comp.anu.edu.au/people/alex-potanin/" style="color:var(--accent)">Prof. Alex Potanin</a>, <a href="https://comp.anu.edu.au/people/alwen-tiu/" style="color:var(--accent)">A/Prof. Alwen Tiu</a> (ANU), and collaborators at UNSW and NUS.
+          Project page: <a href="https://fiducia-lang.github.io/" style="color:var(--accent)">fiducia-lang.github.io</a>.
+          Joint work with <a href="https://comp.anu.edu.au/people/alex-potanin/" style="color:var(--accent)">Prof. Alex Potanin</a> (ANU) and collaborators at UNSW and NUS.
         </span>
       </li>
     </ul>
@@ -316,7 +342,7 @@
         <strong>Y. Liu</strong> et al. (Runtime Verification)<br>
         <span class="venue">Publicly available audit report, Runtime Verification, 2023</span><br>
         <span class="links">
-          <a href="https://github.com/runtimeverification/publications">[report]</a>
+          <a href="https://github.com/runtimeverification/publications/blob/main/reports/smart-contracts/HydraDX-Omnipool-AMM-Audit-Report.pdf">[report]</a>
         </span>
       </li>
     </ul>
@@ -341,16 +367,6 @@
         <span class="role">Sessional Lecturer (undergraduate) &mdash; functional programming in Haskell, type systems, higher-order functions</span>
       </li>
     </ul>
-  </section>
-
-  <!-- ====== Contact ====== -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-links">
-      <a href="mailto:dev.emmaliu@gmail.com">Email</a>
-      <a href="https://github.com/yanliu18">GitHub</a>
-      <a href="https://www.linkedin.com/in/yanliuemma/">LinkedIn</a>
-    </div>
   </section>
 
   <footer>
