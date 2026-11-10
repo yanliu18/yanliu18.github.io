@@ -151,13 +151,14 @@
     .pub-section-label:first-child { margin-top: 0; }
 
     /* ---- Teaching ---- */
-    .teaching-list { list-style: none; }
-    .teaching-list li {
+    .teaching-list, .work-list { list-style: none; }
+    .work-list { margin-top: 12px; }
+    .teaching-list li, .work-list li {
       margin-bottom: 10px;
       padding-left: 16px;
       border-left: 3px solid var(--accent-light);
     }
-    .teaching-list .role { color: var(--fg-muted); font-size: 0.93rem; }
+    .teaching-list .role, .work-list .role { color: var(--fg-muted); font-size: 0.93rem; }
 
     /* ---- Footer ---- */
     footer {
@@ -218,17 +219,31 @@
       its steep adoption barrier.
     </p>
     <p>
-      My background spans academia and industry across four countries. Before joining ANU I was a Staff Engineer at
-      <a href="https://pi2.network/"><strong>Pi Squared Inc.</strong></a> (2024&ndash;2025) working on zero-knowledge circuits and cross-chain protocols,
-      and Rust Security Lead at <a href="https://runtimeverification.com/"><strong>Runtime Verification</strong></a> (2022&ndash;2024) developing Rust MIR semantics
-      in the <a href="https://kframework.org/">K Framework</a> and leading smart contract audits. Earlier I was a Senior Engineer at
-      <a href="https://www.antgroup.com/en"><strong>AntGroup</strong></a> (2019&ndash;2022), a Sessional Lecturer at <a href="https://www.monash.edu/"><strong>Monash University</strong></a>
-      (2018&ndash;2019), and a Research Fellow at <a href="https://www.nus.edu.sg/"><strong>NUS</strong></a> / <a href="https://adsc.illinois.edu/"><strong>ADSC&ndash;UIUC</strong></a> (2013&ndash;2017).
-    </p>
-    <p>
       I hold a <strong>PhD in Computer Science</strong> from the <a href="https://www.nus.edu.sg/">National University of Singapore</a> (2014),
       where I was supervised by <a href="https://www.comp.nus.edu.sg/~dongjs/">Prof. Jin Song Dong</a>. My thesis applied model checking to pervasive computing systems.
     </p>
+    <p>
+      My background spans academia and industry across four countries. Before joining ANU I was:
+    </p>
+    <ul class="work-list">
+      <li>
+        <strong>Staff Engineer</strong>, <a href="https://pi2.network/">Pi Squared Inc.</a> (2024&ndash;2025)<br>
+        <span class="role">Zero-knowledge circuits and cross-chain protocols</span>
+      </li>
+      <li>
+        <strong>Rust Security Lead</strong>, <a href="https://runtimeverification.com/">Runtime Verification</a> (2022&ndash;2024)<br>
+        <span class="role">Rust MIR semantics in the <a href="https://kframework.org/">K Framework</a>; leading smart contract audits</span>
+      </li>
+      <li>
+        <strong>Senior Engineer</strong>, <a href="https://www.antgroup.com/en">AntGroup</a> (2019&ndash;2022)
+      </li>
+      <li>
+        <strong>Sessional Lecturer</strong>, <a href="https://www.monash.edu/">Monash University</a> (2018&ndash;2019)
+      </li>
+      <li>
+        <strong>Research Fellow</strong>, <a href="https://www.nus.edu.sg/">NUS</a> / <a href="https://adsc.illinois.edu/">ADSC&ndash;UIUC</a> (2013&ndash;2017)
+      </li>
+    </ul>
   </section>
 
   <!-- ====== Research ====== -->
@@ -270,6 +285,18 @@
   <!-- ====== Publications ====== -->
   <section id="publications">
     <h2>Selected Publications</h2>
+
+    <p class="pub-section-label">Audit Reports &amp; Technical Standards</p>
+    <ul class="pub-list">
+      <li>
+        <span class="title">HydraDX Omnipool AMM — Security Audit</span><br>
+        <strong>Y. Liu</strong> et al. (Runtime Verification)<br>
+        <span class="venue">Publicly available audit report, Runtime Verification, 2023</span><br>
+        <span class="links">
+          <a href="https://github.com/runtimeverification/publications/blob/main/reports/smart-contracts/HydraDX-Omnipool-AMM-Audit-Report.pdf">[report]</a>
+        </span>
+      </li>
+    </ul>
 
     <p class="pub-section-label">Journal Articles</p>
     <ul class="pub-list">
@@ -331,18 +358,6 @@
         <span class="venue">FM 2012: Formal Methods (LNCS vol. 7436), pp. 326&ndash;340</span><br>
         <span class="links">
           <a href="https://doi.org/10.1007/978-3-642-32759-9_28">[doi]</a>
-        </span>
-      </li>
-    </ul>
-
-    <p class="pub-section-label">Audit Reports &amp; Technical Standards</p>
-    <ul class="pub-list">
-      <li>
-        <span class="title">HydraDX Omnipool AMM — Security Audit</span><br>
-        <strong>Y. Liu</strong> et al. (Runtime Verification)<br>
-        <span class="venue">Publicly available audit report, Runtime Verification, 2023</span><br>
-        <span class="links">
-          <a href="https://github.com/runtimeverification/publications/blob/main/reports/smart-contracts/HydraDX-Omnipool-AMM-Audit-Report.pdf">[report]</a>
         </span>
       </li>
     </ul>
