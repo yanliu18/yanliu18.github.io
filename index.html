@@ -201,7 +201,7 @@
     </div>
     <nav>
       <a href="#about">About</a>
-      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
       <a href="#publications">Publications</a>
       <a href="#teaching">Teaching &amp; Service</a>
     </nav>
@@ -235,7 +235,7 @@
         <span class="role">Rust MIR semantics in the <a href="https://kframework.org/">K Framework</a>; leading smart contract audits</span>
       </li>
       <li>
-        <strong>Senior Engineer</strong>, <a href="https://www.antgroup.com/en">AntGroup</a> (2019&ndash;2022)
+        <strong>Individual Contributor</strong>, <a href="https://www.antgroup.com/en">AntGroup</a> (2019&ndash;2022)
       </li>
       <li>
         <strong>Sessional Lecturer</strong>, <a href="https://www.monash.edu/">Monash University</a> (2018&ndash;2019)
@@ -247,23 +247,22 @@
   </section>
 
   <!-- ====== Research ====== -->
-  <section id="research">
-    <h2>Research</h2>
+  <section id="projects">
+    <h2>Projects</h2>
     <p>
-      My current research programme centres on <em>secure-by-construction embedded systems</em> and
-      <em>AI-assisted verified software development</em>, unified by a choreography-style language called
-      <strong>ChorFi</strong> built on the seL4 microkernel.
+      My current work centres on <em>continuous verification</em> while developing embedded systems on the seL4 microkernel.
     </p>
     <ul class="project-list">
       <li>
-        <span class="proj-name"><a href="https://fiducia-lang.github.io/" style="color:var(--fg);text-decoration:none">Fiducia</a></span> &mdash; Secure-by-Construction Embedded Systems<br>
+        <span class="proj-name"><a href="https://fiducia-lang.github.io/" style="color:var(--fg);text-decoration:none">Fiducia</a></span> &mdash; Secure and Deadlock-Free by Construction<br>
         <span class="proj-desc">
-          A DSL and toolchain for building information-flow-secure embedded systems on seL4. Developers express
-          inter-device communication and intra-device computation in a single ChorFi choreography specification;
-          safety, liveness, and non-interference are verified automatically at compile time via model checking and
-          a sound security type system. Motto: <em>if it compiles, security is guaranteed.</em>
-          Project page: <a href="https://fiducia-lang.github.io/" style="color:var(--accent)">fiducia-lang.github.io</a>.
-          Joint work with <a href="https://comp.anu.edu.au/people/alex-potanin/" style="color:var(--accent)">Prof. Alex Potanin</a> (ANU) and collaborators at UNSW and NUS.
+          A language and compiler for applications on the formally verified <a href="https://sel4.systems/" style="color:var(--accent)">seL4</a> microkernel.
+          Each protection domain is a CSP-style process orchestrating channel communication and computation in C or Pancake;
+          a two-level information-flow type system keeps sensitive data from leaking, and every well-formed system is
+          deadlock-free and deterministic. Every build is also a verification run: the compiler derives a UPPAAL model of
+          the whole system from the program, with the C/Pancake code&rsquo;s contracts (proved by Frama-C or Viper) as event
+          specifications, so the model never drifts from the code that ships. The core language&rsquo;s semantics are mechanised in Lean&nbsp;4.
+          Joint work with <a href="https://comp.anu.edu.au/people/alex-potanin/" style="color:var(--accent)">Prof. Alex Potanin</a> (ANU) and collaborators at UNSW.
         </span>
       </li>
     </ul>
